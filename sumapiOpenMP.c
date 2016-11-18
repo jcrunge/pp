@@ -5,17 +5,17 @@
 
 void sumaPi(void);
 
+
 int main(int argc, char *argv[])
 {
-	int numeroDeHilos = strtol(argv[1], NULL, 10);
-	int n=0;
+
+	int	n = strtol(argv[1], NULL, 10);
 	double factor;
 	double sum = 0.0, pi_approx;
 	int k;
-	#pragma omp parallel for num_threads(numeroDeHilos) \
+	#pragma omp parallel for num_threads(n) \
 	 default(none) reduction(+:sum) private(k, factor) \
 	 shared(n)
-	
 	for(k= 0; k<n; k++){
 		if(k%2 == 0){
 			factor=1.0;
