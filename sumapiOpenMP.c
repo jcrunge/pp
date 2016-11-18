@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include <omp.h>
 
-
-void sumaPi(void);
-
-
 int main(int argc, char *argv[])
 {
 
