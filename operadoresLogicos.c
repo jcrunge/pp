@@ -2,9 +2,22 @@
 #include <stdlib.h>
 //#include <omp.h>
 #define EXTRACT_BIT(n,i) ((n&(1<<i))?1:0)
-int v=16;
+
+int v[16];
 int i;
+
+void Cod(int id, int z);
+
 //double a[n],b[n],c[n],d[n],e[n],f[n],g[n],h[n],i[n];
+int main(int argc, char *argv[])
+{
+	//int	n = strtol(argv[1], NULL, 10);
+	//#pragma omp parallel for num_threads(n)
+	
+	/*Pasar la fuincuin Cod*/
+	
+	return 0;
+}
 
 void Cod(int id, int z){
 	//int my_rank = omp_get_num_threads();
