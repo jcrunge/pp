@@ -28,6 +28,7 @@ void QuickSort(int left, int right)
             j--;
         }
     };
+	int numeroDeHilos=2;
     #pragma omp parallel for num_threads(numeroDeHilos)
     for (int w = 0; w < 2; ++w)
     {
@@ -41,7 +42,7 @@ void QuickSort(int left, int right)
 
 int main()
 {     
-    int numeroDeHilos=2;
+    
     int n;
     while ( scanf("%d", &n)==1 )
     {
