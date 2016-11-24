@@ -2,10 +2,7 @@
 #include <mpi.h>
 #include <math.h>
 
-double dx_arctan(double x)
-	{    
-		return (1.0 / (1.0 + x*x));
-	} 
+double dx_arctan(double x);
 
 int main(void)
 {
@@ -21,8 +18,6 @@ int main(void)
 		int n =100000;
 		MPI_Bcast(&n, 1, MPI_INT, 0,MPI_COMM_WORLD);
 		//printf("calculando pi apartir de %d procesos: ", comm_sz);
-		
-		
  		MPI_Allreduce(&pi_approx, &pi, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 		printf("el valor aproximado de PI es: %f\n", pi);
 
@@ -44,8 +39,12 @@ int main(void)
 	}
 	MPI_Finalize(); 
     return 0;
-    
-    
 }
+
+double dx_arctan(double x)
+	{    
+		return (1.0 / (1.0 + x*x));
+	} 
+
 //mpicc -std=c99 -o sumpi sumaPi.c
 //mpiexec -n  150 ./sumpi
