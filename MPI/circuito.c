@@ -8,7 +8,7 @@ int main (int argc, char *argv[])
 {
  
 	int i, my_rank, comm_sz, posib, comparador_total, solucion;	
-	int check_circuit (int, int);
+	int circuito (int, int);
 	MPI_Init (&argc, &argv);
 	MPI_Comm_rank (MPI_COMM_WORLD, &my_rank);
 	MPI_Comm_size (MPI_COMM_WORLD, &comm_sz);
